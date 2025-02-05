@@ -5,5 +5,8 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [tailwindcss(), react()],
-  base: "/",
+  base: "/SSSocialConnEEEct",
+  build: {
+    outDir: "dist", // Ensure this matches the directory you want to output
+  },
 });
