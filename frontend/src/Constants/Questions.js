@@ -1,0 +1,413 @@
+// for all things questions related
+
+const questions = [
+  {
+    step: 1,
+    label: "Full Name",
+    type: "text",
+    placeholder: "Enter Full Name as of Matric Card",
+    id: "FullName",
+    name: "FullName",
+    required: true,
+  },
+  {
+    step: 2,
+    label: "How should we address you?",
+    type: "text",
+    placeholder: "Enter how you want us to address you",
+    id: "PreferredName",
+    name: "PreferredName",
+    required: true,
+  },
+  {
+    step: 3,
+    label: "School Email",
+    type: "text",
+    placeholder: "Enter your official school email",
+    id: "email",
+    name: "email",
+    required: true,
+  },
+  {
+    step: 4,
+    label: "Contact",
+    type: "text",
+    placeholder: "Enter phone number",
+    id: "contact",
+    name: "contact",
+    required: true,
+  },
+  {
+    step: 5,
+    label: "How do you identify?",
+    type: "radio",
+    options: ["Male", "Female", "Others"],
+    name: "gender",
+    required: true,
+  },
+  {
+    step: 6,
+    label: "Age",
+    type: "text",
+    placeholder: "Enter your age",
+    id: "age",
+    name: "age",
+    required: true,
+  },
+  {
+    step: 7,
+    label: "Are you here to look for a friend or a potential partner?",
+    type: "radio",
+    options: ["Friend", "Partner"],
+    name: "relationship",
+    required: true,
+  },
+  {
+    step: 8,
+    label: "Type of relationship",
+    type: "radio",
+    options: ["Casual", "Serious"],
+    name: "typeofrelationship",
+    required: true,
+  },
+  {
+    step: 9,
+    label:
+      "How important is family in your life? (1 being not important to 10 being extremely important)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "familyImportance",
+    required: true,
+  },
+  {
+    step: 10,
+    label:
+      "How important is religion in your life? (Scale: 1 = Not Important, 10 = Extremely Important)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "religionImportance",
+    required: true,
+  },
+  {
+    step: 11,
+    label:
+      "How ambitious are you about your career and personal growth? (Scale: 1 = Not Ambitious, 10 = Extremely Ambitious)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "careerAmbition",
+    required: true,
+  },
+  {
+    step: 12,
+    label:
+      "How comfortable are you discussing your feelings and emotions? (Scale: 1 = Not Comfortable, 10 = Very Comfortable)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "feelingsComfort",
+    required: true,
+  },
+  {
+    step: 13,
+    label:
+      "How much emotional support do you expect from your partner? (Scale: 1 = Minimal, 10 = A Lot)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "emotionalSupport",
+    required: true,
+  },
+  {
+    step: 14,
+    label:
+      "How important is it for you and your partner to have a similar sleep schedule? (Scale: 1 = Not Important, 10 = Extremely Important)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "sleepSchedule",
+    required: true,
+  },
+  {
+    step: 15,
+    label:
+      "How important is fitness in your lifestyle? (Scale: 1 = Not Important, 10 = Very Important)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "fitness",
+    required: true,
+  },
+  {
+    step: 16,
+    label:
+      "How much alone time do you prefer versus time spent with your partner? (Scale: 1 = Mostly Alone Time, 10 = Mostly Together Time)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "aloneTime",
+    required: true,
+  },
+  {
+    step: 17,
+    label:
+      "How important is it to you that you and your partner share hobbies? (Scale: 1 = Not Important, 10 = Extremely Important)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "sharedHobbies",
+    required: true,
+  },
+  {
+    step: 18,
+    label:
+      "How much do you enjoy traveling? (Scale: 1 = Not at All, 10 = I Love Traveling)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "traveling",
+    required: true,
+  },
+  {
+    step: 19,
+    label:
+      "How much do you enjoy outdoor activities? (Scale: 1 = Not at All, 10 = I Love Outdoor Activities)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "outdoorActivities",
+    required: true,
+  },
+  {
+    step: 20,
+    label:
+      "How much do you enjoy indoor activities (e.g., reading, gaming)? (Scale: 1 = Not at All, 10 = I Love Indoor Activities)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "indoorActivities",
+    required: true,
+  },
+  {
+    step: 21,
+    label: "Are you more of an introvert or extrovert?",
+    type: "radio",
+    options: ["Introvert", "Extrovert", "Ambivert"],
+    name: "introvertExtrovert",
+    required: true,
+  },
+  {
+    step: 22,
+    label: "What is your MBTI personality type? (e.g., INTJ, ENFP)",
+    type: "dropdown",
+    options: [
+      "INTJ",
+      "INTP",
+      "ENTJ",
+      "ENTP",
+      "INFJ",
+      "INFP",
+      "ENFJ",
+      "ENFP",
+      "ISTJ",
+      "ISFJ",
+      "ESTJ",
+      "ESFJ",
+      "ISTP",
+      "ISFP",
+      "ESTP",
+      "ESFP",
+    ],
+    name: "mbti",
+    required: true,
+  },
+  {
+    step: 23,
+    label:
+      "How much of a risk-taker are you? (Scale: 1 = Very Risk-Averse, 10 = Very Risk-Taking)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "riskTaker",
+    required: true,
+  },
+  {
+    step: 24,
+    label:
+      "How often do you prefer to communicate with your partner? (Scale: 1 = Rarely, 10 = Very Frequently)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "communicationFrequency",
+    required: true,
+  },
+  {
+    step: 25,
+    label:
+      "How important are deep conversations to you in a relationship? (Scale: 1 = Not Important, 10 = Very Important)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "deepConversations",
+    required: true,
+  },
+  {
+    step: 26,
+    label:
+      "How open are you to receiving feedback from your partner? (Scale: 1 = Not Open, 10 = Very Open)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "feedback",
+    required: true,
+  },
+  {
+    step: 27,
+    label: "Do you want to have children in the future?",
+    type: "radio",
+    options: ["Yes", "No", "Unsure"],
+    name: "children",
+    required: true,
+  },
+  {
+    step: 28,
+    label:
+      "How important is it that your career goals align with your partner's? (Scale: 1 = Not Important, 10 = Very Important)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "careerGoals",
+    required: true,
+  },
+  {
+    step: 29,
+    label:
+      "How important is it that your long-term retirement plans align with your partner's? (Scale: 1 = Not Important, 10 = Very Important)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "retirementPlans",
+    required: true,
+  },
+  {
+    step: 30,
+    label: "What type of parties do you enjoy attending?",
+    type: "radio",
+    options: [
+      "Loud and lively parties",
+      "Small and intimate gatherings",
+      "No parties at all",
+    ],
+    name: "partyType",
+    required: true,
+  },
+  {
+    step: 31,
+    label: "How big is your friend circle?",
+    type: "radio",
+    options: [
+      "Small (1-3 close friends)",
+      "Medium (4-8 friends)",
+      "Large (9+ friends)",
+    ],
+    name: "friendCircle",
+    required: true,
+  },
+  {
+    step: 32,
+    label:
+      "How important is it that your partner spends time with your friends and family? (Scale: 1 = Not Important, 10 = Very Important)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "partnerTimeWithFriendsFamily",
+    required: true,
+  },
+  {
+    step: 33,
+    label:
+      "How financially stable do you consider yourself? (Scale: 1 = Not Stable, 10 = Very Stable)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "financialStability",
+    required: true,
+  },
+  {
+    step: 34,
+    label: "Do you prefer spending or saving money?",
+    type: "radio",
+    options: ["Mostly Spending", "Balanced", "Mostly Saving"],
+    name: "spendingSavingPreference",
+    required: true,
+  },
+  {
+    step: 35,
+    label:
+      "Do you prefer a simple or luxurious lifestyle? (Scale: 1 = Simple, 10 = Luxurious)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "lifestylePreference",
+    required: true,
+  },
+  {
+    step: 36,
+    label:
+      "How important is physical affection in a relationship? (Scale: 1 = Not Important, 10 = Very Important)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "physicalAffection",
+    required: true,
+  },
+  {
+    step: 37,
+    label:
+      "How important are looks to you in a partner? (Scale: 1 = Not Important, 10 = Very Important)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "looksImportance",
+    required: true,
+  },
+  {
+    step: 38,
+    label:
+      "How important is height to you in a partner? (Scale: 1 = Not Important, 10 = Very Important)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "heightImportance",
+    required: true,
+  },
+  {
+    step: 39,
+    label:
+      "How important is weight to you in a partner? (Scale: 1 = Not Important, 10 = Very Important)",
+    type: "slider",
+    options: Array.from({ length: 10 }, (_, i) => i + 1),
+    name: "weightImportance",
+    required: true,
+  },
+  {
+    step: 40,
+    label:
+      "What type of relationship are you looking for, and how do family, religion, and personal growth factor into your ideal partnership? (Min 2 sentences.)",
+    type: "textarea",
+    placeholder: "Enter your response here...",
+    id: "relationshipType",
+    name: "relationshipType",
+    required: true,
+  },
+  {
+    step: 41,
+    label:
+      "Describe your day-to-day lifestyle, including how you balance work, fitness, hobbies, and social activities. How important is it for you and your partner to align in these areas? (Min 2 sentences.)",
+    type: "textarea",
+    placeholder: "Enter your response here...",
+    id: "lifestyleDescription",
+    name: "lifestyleDescription",
+    required: true,
+  },
+  {
+    step: 42,
+    label:
+      "How do you approach communication and emotional support in a relationship? What kind of conversations and interactions make you feel most connected to your partner? (Min 2 sentences.)",
+    type: "textarea",
+    placeholder: "Enter your response here...",
+    id: "communicationSupport",
+    name: "communicationSupport",
+    required: true,
+  },
+  {
+    step: 43,
+    label:
+      "What are your long-term goals for a relationship, including thoughts on family, finances, and shared future plans? What traits or qualities in a partner are most important to you? (Min 2 sentences.)",
+    type: "textarea",
+    placeholder: "Enter your response here...",
+    id: "longTermGoals",
+    name: "longTermGoals",
+    required: true,
+  },
+];
+
+export default questions;
