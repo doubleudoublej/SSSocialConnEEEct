@@ -23,7 +23,7 @@ const App = () => {
   return (
     <Routes>
       <Route
-        path="/SSSocialConnEEEct"
+        path="/"
         element={
           <>
             <div className="bg-rose-200 text-black text-center p-3">
