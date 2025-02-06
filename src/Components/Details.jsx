@@ -17,10 +17,16 @@ const Details = () => {
           {/* <br className="sm:block hidden font-poppins" /> 20 - Feb - 2025 */}
         </h2>
         <div className="flex flex-row items-start justify-between items-center w-full">
-          <div className="flex-1 font-poppins font-semibold ss:text-[20px] text-[20px] text-rose-600 ss:leading-[100.8px] leading-[50px]">
-            Registration starts @ 5:30pm <br />
-            Event Start: 6:00pm <br />
-            Event Ends: 8:45pm <br />
+          <div className="flex-1 font-poppins font-semibold ss:text-[20px] text-[20px] text-rose-600 ss:leading-[100.8px] leading-[30px]">
+            Afternoon Booth Activites from 2:00pm - 6:00pm
+            <br /> Comprising of photobooths, clay modelling, build your own
+            bouquet, and more! <br />
+            Event Location: <span className="underline">SHHK Foyer</span>
+            <br />
+            <br />
+            Night Event Registration starts @ 5:30pm <br />
+            Start: 6:00pm <br />
+            Ends: 8:45pm <br />
             <br />
             Event Location: <span className="underline">
               LKC Function Hall

@@ -31,16 +31,28 @@ const About = () => {
                 <span className="text-rose-500 underline">social mixer</span> to
                 make memories with friends and spark new connections.
                 <br />
-                This event provides an opportunity for members of both faculty
+                This event provides an opportunity for members of both faculties
                 to mingle and have fun together!
                 <br />
                 <br />
+                Come by in the afternoon along SHHK Foyer from 2:00 - 6:00 pm to
+                have fun with the various arts and crafts booths available! With
+                a blend of creativity, connection, and fun, come join us to
+                deepen your relationships and make lasting memories!
                 <br />
                 <br />
                 <br />
+                Afterwards, join us in the evening at LKC Function Room from
+                5:30 - 8:45 pm for an exhilarating night of mystery and
+                connection! Step into an immersive high school-themed murder
+                mystery, where you will work in pairs or small groups to uncover
+                clues, crack puzzles, and solve the case.
                 <br />
                 <br />
                 <br />
+                With a mix of intrigue, teamwork, and surprises, come be part of
+                an unforgettable adventure and forge new connections along the
+                way!
                 <br />
                 <br />
               </p>
