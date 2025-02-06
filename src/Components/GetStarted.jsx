@@ -11,7 +11,9 @@ const GetStarted = () => {
   return (
     <div className={`${styles.flexCenter} items-center flex-col`}>
       <div className="mb-4">
-        <p className="text-rose-600 text-[50px] underline">Event Starts In</p>
+        <h2 className="text-3xl font-semibold text-red-600 underline decoration-rose-500">
+          Event Starts In
+        </h2>
         <CountdownTimer targetDate={targetDate} />
       </div>
       {/* <div
