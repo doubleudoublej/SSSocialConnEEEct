@@ -71,7 +71,7 @@ const Details = () => {
                 🚨 Registration & Personality Quiz closes on
                 <span className="underline text-black">
                   {" "}
-                  19th February 2025, 12:00 PM!{" "}
+                  18th February 2025, 12:00 PM!{" "}
                 </span>
               </p>
 
