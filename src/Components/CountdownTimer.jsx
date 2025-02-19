@@ -29,7 +29,7 @@ const CountdownTimer = ({ targetDate }) => {
   if (!timeLeft) {
     return (
       <div className="text-center text-red-600 font-bold text-4xl">
-        Time's up!
+        Event has started! Head to LKC!
       </div>
     );
   }

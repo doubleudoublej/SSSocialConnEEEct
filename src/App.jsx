@@ -1,5 +1,10 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import styles from "./styles.js";
 import {
   Navbar,
@@ -16,9 +21,11 @@ import {
 } from "./Components/index.js"; // Ensure this import is correct
 import { Drawer } from "antd";
 import { useState } from "react";
+import supabase from "./supabase-client.js";
 
 const App = () => {
   const [open, setOpen] = useState(false);
+  const [user, setUser] = useState(null);
 
   return (
     <Routes>
@@ -56,8 +63,11 @@ const App = () => {
         }
       />
       <Route path="/about.jsx" element={<About />} />
-      <Route path="/data.jsx" element={<Data />} />
-      <Route path="/login.jsx" element={<Login />} />
+      <Route
+        path="/data.jsx"
+        element={user ? <Data user={user} /> : <Navigate to="/login.jsx" />}
+      />
+      <Route path="/login.jsx" element={<Login setUser={setUser} />} />
     </Routes>
   );
 };
