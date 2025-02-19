@@ -24,8 +24,15 @@ import { useState } from "react";
 import supabase from "./supabase-client.js";
 
 const App = () => {
-  const [open, setOpen] = useState(false);
   const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // Load user session from local storage
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
 
   return (
     <Routes>
@@ -39,7 +46,6 @@ const App = () => {
                   <Navbar />
                 </div>
               </div>
-              {/* hero component */}
               <div className={`bg-rose-200 ${styles.flexStart}`}>
                 <div className={`${styles.boxWidth}`}>
                   <Hero />

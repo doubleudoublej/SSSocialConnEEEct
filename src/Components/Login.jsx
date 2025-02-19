@@ -32,7 +32,10 @@ const Login = ({ setUser }) => {
       return;
     }
 
-    // Store user session
+    // Store user session in local storage
+    localStorage.setItem("user", JSON.stringify(data));
+
+    // Store user session in state
     setUser(data);
 
     // Redirect to the data page
