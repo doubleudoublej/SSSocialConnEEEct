@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Navbar } from "./index.js"; // Ensure this import is correct
 import styles from "../styles.js";
 import { useNavigate } from "react-router-dom";
@@ -10,15 +10,6 @@ const Login = ({ setUser }) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-
-  // Check for session on component mount
-  useEffect(() => {
-    const session = supabase.auth.session(); // Get the current session
-    if (session) {
-      setUser(session.user);
-      navigate("/login.jsx");
-    }
-  }, [navigate, setUser]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
